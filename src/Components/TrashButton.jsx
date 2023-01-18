@@ -1,6 +1,6 @@
 import { Icons } from "../assets/icons";
 
-export const TrashButton = ({ onClick, disabled = false }) => (
+export const TrashButton = ({ disabled = false, handleClickTrash, dog }) => (
   <img
     src={Icons.Trash}
     alt=""
@@ -11,10 +11,6 @@ export const TrashButton = ({ onClick, disabled = false }) => (
       opacity: disabled ? 0.5 : 1,
       cursor: disabled ? "not-allowed" : "pointer",
     }}
-    onClick={() => {
-      if (!disabled) {
-        onClick();
-      }
-    }}
+    onClick={(e) => handleClickTrash(dog, e)}
   />
 );

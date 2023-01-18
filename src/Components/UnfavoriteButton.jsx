@@ -1,13 +1,11 @@
 import { Icons } from "../assets/icons";
 
-export const UnfavoriteButton = ({ onClick }) => (
+export const UnfavoriteButton = ({ handleClickHeart, dog}) => (
   <img
     src={Icons.Heart}
     alt=""
     className="unfavorite-button"
     style={{ width: 40, border: 0 }}
-    onClick={() => {
-      onClick();
-    }}
+    onClick={(e) => handleClickHeart(dog, e)}
   />
 );

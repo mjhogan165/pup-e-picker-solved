@@ -20,10 +20,7 @@ function App() {
     console.log('dd');
     setLoading(true);
     fetchAllDogs((result)=>{
-      setFetchDogs(!fetchDogs)
-      setDogCards(result)
-      console.log(result);
-    
+      result.json()
     })
       .then(setLoading(false))
       .catch(() => {

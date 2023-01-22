@@ -7,6 +7,9 @@ import "./fonts/RubikBubbles-Regular.ttf";
 import { API_REQUEST } from "./const";
 import toast, { Toaster } from "react-hot-toast";
 import { fetchAllDogs } from "./fetch-calls/get-dogs";
+// const toastId = toast.loading('Loading...');
+
+
 
 function App() {
   const [dogCards, setDogCards] = useState([]);
@@ -14,21 +17,35 @@ function App() {
   const [unFavoriteDogs, setUnFavoriteDogs] = useState(0);
   const [fetchDogs, setFetchDogs] = useState(true);
   const [activeBtn, setActiveBtn] = useState("");
-  const [Loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+
 
   useEffect(() => {
-    console.log('dd');
-    setLoading(true);
-    fetchAllDogs((result)=>{
-      result.json()
-    })
-      .then(setLoading(false))
-      .catch(() => {
-        setLoading(false);
-        toast.error("Failed to fetch dogs");
-      })
-      .finally();
+    console.log('useEffect2');
+    fetchAllDogs()
+    .then(response => response.json())
+    .then(result => {
+      setDogCards(result)
+    }
+      )
+    .catch(error => {toast.error("oh no an error")})
+ 
+
+    // fetchAllDogs((result) => {
+    //   result.json()
+    // }).then(respose => JSON.stringify(response))
+    //   .then((result) => {
+    //     setLoading(false)
+    //     console.log(result)
+    //   })
+    //   .catch(() => {
+    //     setLoading(false);
+    //     toast.error("Failed to fetch dogs");
+    //   })
+    //   .finally();
   }, [fetchDogs]);
+
 
   const handleClickHeart = (dog) => {
     const isFavorite = dog.isFavorite;
@@ -82,7 +99,10 @@ function App() {
   const handleClickCreateDog = () => {
     setActiveBtn("createDog");
   };
-
+const loader =() => {
+  if(loading){toast.loading("cunt")
+}
+}
   return (
     <div className="App">
       <Toaster position="top-center" />

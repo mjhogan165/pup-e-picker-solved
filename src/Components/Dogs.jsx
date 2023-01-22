@@ -9,19 +9,18 @@ export const Dogs = ({
   handleClickTrash,
   activeBtn,
 }) => {
-  let array = dogCards.map((dog) => dog);
 
-  if (activeBtn === "favoritedBtn") {
-    array = array.filter((dog) => dog.isFavorite);
-  } else if (activeBtn === "unFavoritedBtn") {
-    array = array.filter((dog) => !dog.isFavorite);
-  }
+  // if (activeBtn === "favoritedBtn") {
+  //   array = array.filter((dog) => dog.isFavorite);
+  // } else if (activeBtn === "unFavoritedBtn") {
+  //   array = array.filter((dog) => !dog.isFavorite);
+  // }
 
   return (
     //  the "<> </>"" are called react fragments, it's like adding all the html inside
     // without adding an actual html element
     <>
-      {array.map((dog) => (
+      {dogCards.map((dog) => (
         <DogCard
           handleClickHeart={handleClickHeart}
           handleClickTrash={handleClickTrash}

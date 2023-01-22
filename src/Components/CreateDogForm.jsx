@@ -9,11 +9,11 @@ export const CreateDogForm = () => {
   const [descriptionInput, setDescriptionInput] = useState("");
 
   const handleSubmitDog = () => {
-    createDogFetch({
-      name: nameInput,
-      image: selectedImage,
-      description: descriptionInput,
-    })
+    // createDogFetch({
+    //   name: nameInput,
+    //   image: selectedImage,
+    //   description: descriptionInput,
+    // })
       // .then(() => {
       //   toast.success("Success!!");
       // })

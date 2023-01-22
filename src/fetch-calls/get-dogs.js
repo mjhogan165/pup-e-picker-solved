@@ -1,17 +1,16 @@
 import { API_REQUEST } from "../const";
+import toast, { Toaster } from "react-hot-toast";
 
 export function fetchAllDogs() {
+  var requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
+  };
+  
   return fetch(API_REQUEST, {
     method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(),
-  }).then((response) => {
-    if (!response.ok) {
-      throw new Error("could not create dog");
-    }
-  });
+    redirect: 'follow'
+  })
 }
 
 // fetch(API_REQUEST, requestOptions)

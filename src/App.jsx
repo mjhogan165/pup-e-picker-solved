@@ -5,6 +5,8 @@ import { Section } from "./Components/Section";
 import { useState, useEffect } from "react";
 import "./fonts/RubikBubbles-Regular.ttf";
 import { API_REQUEST } from "./const";
+import toast, { Toaster } from "react-hot-toast";
+import { fetchAllDogs } from "./fetch-calls/get-dogs";
 
 function App() {
   const [dogCards, setDogCards] = useState([]);
@@ -12,29 +14,23 @@ function App() {
   const [unFavoriteDogs, setUnFavoriteDogs] = useState(0);
   const [fetchDogs, setFetchDogs] = useState(true);
   const [activeBtn, setActiveBtn] = useState("");
+  const [Loading, setLoading] = useState(false);
 
   useEffect(() => {
-    var requestOptions = {
-      method: "GET",
-      redirect: "follow",
-    };
-
-    fetch(API_REQUEST, requestOptions)
-      .then((response) => response.json())
-      .then((parsedResponse) => {
-        const favoriteDogs = parsedResponse.filter((dog) => dog.isFavorite);
-        const unFavoriteDogs = parsedResponse.filter((dog) => !dog.isFavorite);
-        if (activeBtn === "favoriteBtn") {
-          setDogCards(favoriteDogs);
-        } else if (activeBtn === "unFavoritedBtn") {
-          setDogCards(unFavoriteDogs);
-        } else {
-          setDogCards(parsedResponse);
-        }
-        setFavoriteDogs(favoriteDogs);
-        setUnFavoriteDogs(unFavoriteDogs);
+    console.log('dd');
+    setLoading(true);
+    fetchAllDogs((result)=>{
+      setFetchDogs(!fetchDogs)
+      setDogCards(result)
+      console.log(result);
+    
+    })
+      .then(setLoading(false))
+      .catch(() => {
+        setLoading(false);
+        toast.error("Failed to fetch dogs");
       })
-      .catch((error) => console.log(error));
+      .finally();
   }, [fetchDogs]);
 
   const handleClickHeart = (dog) => {
@@ -58,8 +54,7 @@ function App() {
     fetch(apiRequest, requestOptions)
       .then((response) => response.json())
       .then(() => {
-          setFetchDogs(!fetchDogs);
-
+        setFetchDogs(!fetchDogs);
       })
       .catch((error) => console.log(error));
   };
@@ -93,6 +88,7 @@ function App() {
 
   return (
     <div className="App">
+      <Toaster position="top-center" />
       <header>
         <h1>pup-e-picker</h1>
       </header>

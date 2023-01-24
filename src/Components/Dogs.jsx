@@ -7,7 +7,6 @@ export const Dogs = ({
   handleClickHeart,
   dogCards,
   handleClickTrash,
-  activeBtn,
 }) => {
 
   // if (activeBtn === "favoritedBtn") {

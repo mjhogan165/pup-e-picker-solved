@@ -4,105 +4,126 @@ import { Dogs } from "./Components/Dogs";
 import { Section } from "./Components/Section";
 import { useState, useEffect } from "react";
 import "./fonts/RubikBubbles-Regular.ttf";
-import { API_REQUEST } from "./const";
 import toast, { Toaster } from "react-hot-toast";
 import { fetchAllDogs } from "./fetch-calls/get-dogs";
-// const toastId = toast.loading('Loading...');
+import { patchFavorites } from "./fetch-calls/fav-dogs";
+import { deleteDog } from "./fetch-calls/delete-dog";
+import { API_REQUEST } from "./const";
 
-
+function filterDogs(array) {
+  return {
+    array: array,
+    favorites: array.filter((dog) => dog.isFavorite),
+    unFavorites: array.filter((dog) => !dog.isFavorite),
+  };
+}
 
 function App() {
   const [dogCards, setDogCards] = useState([]);
   const [favoriteDogs, setFavoriteDogs] = useState(0);
   const [unFavoriteDogs, setUnFavoriteDogs] = useState(0);
-  const [fetchDogs, setFetchDogs] = useState(true);
-  const [activeBtn, setActiveBtn] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [selected, setSelected] = useState("");
 
+  const sortResults = (arr) => {
+    const filter = filterDogs(arr);
+    setFavoriteDogs(filter.favorites);
+    setUnFavoriteDogs(filter.unFavorites);
+    if (selected === "showFavorites") {
+      setDogCards(filter.favorites);
+    } else if (selected === "showUnFavorites") {
+      setDogCards(filter.unFavorites);
+    } else setDogCards(arr);
+  };
 
-
-  useEffect(() => {
-    console.log('useEffect2');
+  const fetchAndSort = () => {
     fetchAllDogs()
-    .then(response => response.json())
-    .then(result => {
-      setDogCards(result)
-    }
-      )
-    .catch(error => {toast.error("oh no an error")})
- 
-
-    // fetchAllDogs((result) => {
-    //   result.json()
-    // }).then(respose => JSON.stringify(response))
-    //   .then((result) => {
-    //     setLoading(false)
-    //     console.log(result)
-    //   })
-    //   .catch(() => {
-    //     setLoading(false);
-    //     toast.error("Failed to fetch dogs");
-    //   })
-    //   .finally();
-  }, [fetchDogs]);
-
+      .then((response) => response.json())
+      .then((result) => {
+        sortResults(result);
+      })
+      .catch((error) => {
+        toast.error(`${error}`, { id: "fetchDogs" });
+      });
+  };
+  useEffect(() => {
+    toast.loading("Fetching Dogs...", { id: "fetchDogs" });
+    fetch(API_REQUEST, {
+      method: "GET",
+      redirect: "follow",
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        sortResults(result);
+        toast.success("DOGS FOUND", { id: "fetchDogs" });
+      })
+      .catch(() => {
+        toast.error("Failed to fetch dogs", { id: "fetchDogs" });
+      });
+  }, []);
 
   const handleClickHeart = (dog) => {
-    const isFavorite = dog.isFavorite;
-    const apiRequest = API_REQUEST + "/" + dog.id;
-
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-
-    var raw = JSON.stringify({
-      isFavorite: !isFavorite,
-    });
-
-    var requestOptions = {
-      method: "PATCH",
-      headers: myHeaders,
-      body: raw,
-      redirect: "follow",
-    };
-
-    fetch(apiRequest, requestOptions)
-      .then((response) => response.json())
+    patchFavorites(dog)
       .then(() => {
-        setFetchDogs(!fetchDogs);
+        fetchAndSort();
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        toast.error(`${error}`, { id: "fetchDogs" });
+      });
   };
 
   const handleClickTrash = (dog) => {
-    const apiRequest = API_REQUEST + "/" + dog.id;
-    var requestOptions = {
-      method: "DELETE",
-      redirect: "follow",
-    };
-
-    fetch(apiRequest, requestOptions)
-      .then((response) => response.json())
-      .then(() => setFetchDogs(!fetchDogs))
-      .catch((error) => console.log(error));
+    deleteDog(dog)
+      .then(() => {
+        fetchAndSort();
+      })
+      .catch((error) => {
+        toast.error(`${error}`, { id: "fetchDogs" });
+      });
   };
 
-  const handleFilterFavorites = (e) => {
-    let id = e.target.id;
-    if (activeBtn === id) {
-      setActiveBtn("none");
-    } else {
-      setActiveBtn(id);
-    }
-    setFetchDogs(!fetchDogs);
+  const handleShowFavorites = () => {
+    fetchAllDogs()
+      .then((response) => response.json())
+      .then((result) => {
+        const filter = filterDogs(result);
+        if (selected === "showFavorites") {
+          setSelected("");
+          setDogCards(result);
+        } else {
+          setSelected("showFavorites");
+          setDogCards(filter.favorites);
+        }
+        return result;
+      })
+      .catch((error) => {
+        toast.error(`${error}`, { id: "fetchDogs" });
+      });
+  };
+  const handleShowUnFavorites = () => {
+    fetchAllDogs()
+      .then((response) => response.json())
+      .then((result) => {
+        const filter = filterDogs(result);
+        if (selected === "showUnFavorites") {
+          setSelected("");
+          setDogCards(result);
+        } else {
+          setSelected("showUnFavorites");
+          setDogCards(filter.unFavorites);
+        }
+        return result;
+      })
+      .catch((error) => {
+        toast.error(`${error}`, { id: "fetchDogs" });
+      });
   };
 
   const handleClickCreateDog = () => {
-    setActiveBtn("createDog");
+    if (selected === "createDog") {
+      setSelected("");
+    } else setSelected("createDog");
   };
-const loader =() => {
-  if(loading){toast.loading("cunt")
-}
-}
+
   return (
     <div className="App">
       <Toaster position="top-center" />
@@ -112,12 +133,13 @@ const loader =() => {
       <Section
         favoriteDogCount={favoriteDogs.length}
         unFavoriteDogCount={unFavoriteDogs.length}
-        handleFilterFavorites={handleFilterFavorites}
+        handleShowFavorites={handleShowFavorites}
+        handleShowUnFavorites={handleShowUnFavorites}
         label={"Dogs: "}
-        activeBtn={activeBtn}
+        selected={selected}
         handleClickCreateDog={handleClickCreateDog}
       >
-        {activeBtn !== "createDog" && (
+        {selected !== "createDog" && (
           <Dogs
             label={"All Dogs"}
             handleClickHeart={handleClickHeart}
@@ -125,10 +147,9 @@ const loader =() => {
             handleClickTrash={handleClickTrash}
             unFavoriteDogs={unFavoriteDogs}
             favoriteDogs={favoriteDogs}
-            activeBtn={activeBtn}
           />
         )}
-        {activeBtn === "createDog" && <CreateDogForm />}
+        {selected === "createDog" && <CreateDogForm />}
       </Section>
     </div>
   );

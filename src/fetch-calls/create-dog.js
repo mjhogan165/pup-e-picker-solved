@@ -1,6 +1,5 @@
 import { API_REQUEST } from "../const";
 
-
 export function createDogFetch({ name, description, image }) {
   return fetch(API_REQUEST, {
     method: "POST",
@@ -12,9 +11,5 @@ export function createDogFetch({ name, description, image }) {
       description,
       image,
     }),
-  }).then((response) => {
-    if (!response.ok) {
-      throw new Error("could not create dog");
-    }
-  })
+  });
 }

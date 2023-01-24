@@ -1,1 +1,99 @@
-{"dogs":[{"name":"Toni","image":"/src/assets/corgi.png","description":"South scale Manager partnerships iterate Rubber bypassing female","isFavorite":false,"id":0},{"name":"Weldon","image":"/src/assets/cowardly.png","description":"Research streamline female Northeast Electric Gardens Dinar","isFavorite":false,"id":1},{"name":"Marilou","image":"/src/assets/boxer.png","description":"PCI ohm Unbranded Southwest North Northwest Borders Coordinator","isFavorite":false,"id":2},{"name":"Leo","image":"/src/assets/corgi.png","description":"Cab illo like innovative Rap overriding sensor","isFavorite":false,"id":3},{"name":"Beryl","image":"/src/assets/blue-heeler.png","description":"female Hybrid violet wife Hyundai synthesizing Southwest compelling","isFavorite":true,"id":4},{"name":"Polly","image":"/src/assets/corgi.png","description":"Southeast AI backing feed as holistic Chief","isFavorite":false,"id":5},{"name":"Bertha","image":"/src/assets/blue-heeler.png","description":"withdrawal Director UTF8 synthesize Belize invoice gadzooks duh","isFavorite":false,"id":6},{"name":"Loma","image":"/src/assets/dalmation.png","description":"Research Bacon accusamus Total Diesel female Soft Regional","isFavorite":false,"id":7},{"name":"Emery","image":"/src/assets/boxer.png","description":"Bedfordshire lavender Generic Electronics Chrysler parse Account Chicken","isFavorite":false,"id":8},{"name":"Wilbert","image":"/src/assets/blue-heeler.png","description":"Skyway following systems methodologies pink","isFavorite":true,"id":9},{"name":"Fanny","image":"/src/assets/boxer.png","description":"bypass Oak meanwhile Planner interface next deposit et","isFavorite":true,"id":10},{"name":"Wendell","image":"/src/assets/corgi.png","description":"aha Manager Beauty Northwest triumphantly white standardization","isFavorite":true,"id":11},{"name":"Etha","image":"/src/assets/chihuahua.avif","description":"Audi Toys Ottilie male female sensor robust","isFavorite":true,"id":12},{"name":"Clyde","image":"/src/assets/corgi.png","description":"reboot Monroe quas terror Fresh","isFavorite":true,"id":13},{"name":"Chase","image":"/src/assets/chihuahua.avif","description":"override fuchsia Bicycle like but","isFavorite":false,"id":14},{"name":"Kiarra","image":"/src/assets/chihuahua.avif","description":"DRAM streamline payment orange Classical Concrete uniform unto","isFavorite":false,"id":15},{"name":"Nyasia","image":"/src/assets/boxer.png","description":"port Neutrois Web sandpaper female Tricycle drapes","isFavorite":false,"id":16},{"name":"Denis","image":"/src/assets/corgi.png","description":"Convertible acclaimed Savings Gender Tanzania spree Reggae","isFavorite":false,"id":17},{"name":"Aditya","image":"/src/assets/cowardly.png","description":"East asperiores yellow calculate Checking","isFavorite":true,"id":18},{"name":"Rubye","image":"/src/assets/cowardly.png","description":"invoice plus hm Willow fraud","isFavorite":true,"id":19}]}
+{
+  "dogs": [
+    {
+      "name": "Elton",
+      "image": "/src/assets/chihuahua.avif",
+      "description": "Account slake badly bewitched grey Livermorium Cab combine",
+      "isFavorite": true,
+      "id": 0
+    },
+    {
+      "name": "Verlie",
+      "image": "/src/assets/chihuahua.avif",
+      "description": "whiteboard Tandem Overpass IB Checking Frozen target climb",
+      "isFavorite": true,
+      "id": 9
+    },
+    {
+      "name": "Domenico",
+      "image": "/src/assets/corgi.png",
+      "description": "inside azure partially exact West South Points reciprocal",
+      "isFavorite": false,
+      "id": 10
+    },
+    {
+      "name": "Martine",
+      "image": "/src/assets/dalmation.png",
+      "description": "Chrysler Architect Kwanza Hydrogen second coincidence Principal",
+      "isFavorite": false,
+      "id": 11
+    },
+    {
+      "name": "Jordi",
+      "image": "/src/assets/chihuahua.avif",
+      "description": "Technetium Bike provided Tasty Forward tortoise Cerium",
+      "isFavorite": true,
+      "id": 12
+    },
+    {
+      "name": "Eileen",
+      "image": "/src/assets/blue-heeler.png",
+      "description": "neural reach black impactful what compress Agent",
+      "isFavorite": true,
+      "id": 13
+    },
+    {
+      "name": "Mose",
+      "image": "/src/assets/blue-heeler.png",
+      "description": "framework outlying Sudan Cis Hop amongst candela generating",
+      "isFavorite": true,
+      "id": 15
+    },
+    {
+      "name": "Margarett",
+      "image": "/src/assets/dalmation.png",
+      "description": "joule Argentina leverage meh Pickup Martin West iron",
+      "isFavorite": true,
+      "id": 16
+    },
+    {
+      "name": "Wilfredo",
+      "image": "/src/assets/blue-heeler.png",
+      "description": "logistical bluetooth Metal THX copy structure Northwest",
+      "isFavorite": false,
+      "id": 17
+    },
+    {
+      "name": "Eveline",
+      "image": "/src/assets/cowardly.png",
+      "description": "Wichita Classical Touring withdrawal dogsled consequatur Chair temporibus",
+      "isFavorite": true,
+      "id": 18
+    },
+    {
+      "name": "Aniyah",
+      "image": "/src/assets/corgi.png",
+      "description": "absent Assistant New Manager digital",
+      "isFavorite": false,
+      "id": 19
+    },
+    {
+      "name": "",
+      "description": "",
+      "image": "/src/assets/blue-heeler.png",
+      "id": 20
+    },
+    {
+      "name": "safdasfa",
+      "description": "asdasdad",
+      "image": "/src/assets/boxer.jpeg",
+      "id": 21
+    },
+    {
+      "name": "dfhhgdfg",
+      "description": "dggggggggg",
+      "image": "/src/assets/blue-heeler.png",
+      "id": 22
+    }
+  ]
+}

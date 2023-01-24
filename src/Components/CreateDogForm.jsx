@@ -9,35 +9,35 @@ export const CreateDogForm = () => {
   const [descriptionInput, setDescriptionInput] = useState("");
 
   const handleSubmitDog = () => {
-    // createDogFetch({
-    //   name: nameInput,
-    //   image: selectedImage,
-    //   description: descriptionInput,
-    // })
-      // .then(() => {
-      //   toast.success("Success!!");
-      // })
-      // .catch(() => {
-      //   toast.error("Error Fetching Dogs");
-      // })
-      // .finally(() => {
-      //   setNameInput("");
-      //   setDescriptionInput("");
-      //   setSelectedImage(dogPictures.BlueHeeler);
-      // });
-    toast.promise(createDogFetch({
+    createDogFetch({
       name: nameInput,
       image: selectedImage,
       description: descriptionInput,
-    }), {
-      loading: 'Creating Your Dog...',
-      success: 'Dog Created!',
-      error: 'Error when fetching',
-    }).finally(() => {
-      setNameInput("")
-      setDescriptionInput("")
-      setSelectedImage(dogPictures.BlueHeeler)
     })
+      .then(() => {
+        toast.success("Success!!");
+      })
+      .catch(() => {
+        toast.error("Error Fetching Dogs");
+      })
+      .finally(() => {
+        setNameInput("");
+        setDescriptionInput("");
+        setSelectedImage(dogPictures.BlueHeeler);
+      });
+    // toast.promise(createDogFetch({
+    //   name: nameInput,
+    //   image: selectedImage,
+    //   description: descriptionInput,
+    // }), {
+    //   loading: 'Creating Your Dog...',
+    //   success: 'Dog Created!',
+    //   error: 'Error when fetching',
+    // }).finally(() => {
+    //   setNameInput("")
+    //   setDescriptionInput("")
+    //   setSelectedImage(dogPictures.BlueHeeler)
+    // })
   };
   return (
     <form

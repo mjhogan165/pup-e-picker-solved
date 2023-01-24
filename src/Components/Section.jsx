@@ -3,11 +3,11 @@ export const Section = ({
   children,
   favoriteDogCount,
   unFavoriteDogCount,
-  activeBtn,
-  handleFilterFavorites,
+  selected,
+  handleShowFavorites,
+  handleShowUnFavorites,
   handleClickCreateDog,
 }) => {
-
   return (
     <section>
       <div className="container-header">
@@ -16,10 +16,10 @@ export const Section = ({
           {/* Add the class 'active' to any selector in order to make it's color change */}
           {/* This should display the favorited count */}
           <div
-            onClick={handleFilterFavorites}
+            onClick={handleShowFavorites}
             id="favoritedBtn"
             className={
-              `selector ` + `${activeBtn === "favoritedBtn" ? "active" : ""}`
+              `selector ` + `${selected === "showFavorites" ? "active" : ""}`
             }
           >
             favorited ( {favoriteDogCount} )
@@ -27,10 +27,10 @@ export const Section = ({
 
           {/* This should display the unfavorited count */}
           <div
-            onClick={handleFilterFavorites}
+            onClick={handleShowUnFavorites}
             id="unFavoritedBtn"
             className={
-              `selector ` + ` ${activeBtn === "unFavoritedBtn" ? "active" : ""}`
+              `selector ` + `${selected === "showUnFavorites" ? "active" : ""}`
             }
           >
             unfavorited ( {unFavoriteDogCount} )
@@ -38,7 +38,7 @@ export const Section = ({
           <div
             onClick={handleClickCreateDog}
             className={
-              `selector ` + ` ${activeBtn === "createDog" ? "active" : ""}`
+              `selector ` + `${selected === "createDog" ? "active" : ""}`
             }
           >
             create dog

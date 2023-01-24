@@ -1,99 +1,123 @@
 {
   "dogs": [
     {
-      "name": "Elton",
-      "image": "/src/assets/chihuahua.avif",
-      "description": "Account slake badly bewitched grey Livermorium Cab combine",
-      "isFavorite": true,
+      "name": "Whitney",
+      "image": "/src/assets/blue-heeler.png",
+      "description": "Assistant methodologies Elegant est Convertible transmitter Nitrogen yahoo",
+      "isFavorite": false,
       "id": 0
     },
     {
-      "name": "Verlie",
+      "name": "Julio",
       "image": "/src/assets/chihuahua.avif",
-      "description": "whiteboard Tandem Overpass IB Checking Frozen target climb",
+      "description": "Electronic Van seize Chevrolet same",
       "isFavorite": true,
+      "id": 1
+    },
+    {
+      "name": "Lucinda",
+      "image": "/src/assets/blue-heeler.png",
+      "description": "Rial Southeast transmitter weber Washington randomization indigo Handmade",
+      "isFavorite": true,
+      "id": 2
+    },
+    {
+      "name": "Adolfo",
+      "image": "/src/assets/corgi.png",
+      "description": "District South Islands Switchable pascal",
+      "isFavorite": true,
+      "id": 3
+    },
+    {
+      "name": "Kaycee",
+      "image": "/src/assets/cowardly.png",
+      "description": "longingly Soft Northwest yet Electric parsing Curium",
+      "isFavorite": true,
+      "id": 4
+    },
+    {
+      "name": "Ari",
+      "image": "/src/assets/chihuahua.avif",
+      "description": "Dong Buckinghamshire Federation Van haptic",
+      "isFavorite": true,
+      "id": 5
+    },
+    {
+      "name": "Cameron",
+      "image": "/src/assets/blue-heeler.png",
+      "description": "illo Yttrium Balanced male Bedfordshire Singapore Group",
+      "isFavorite": false,
+      "id": 6
+    },
+    {
+      "name": "Ona",
+      "image": "/src/assets/blue-heeler.png",
+      "description": "Music moralize Electronic Generic impactful",
+      "isFavorite": false,
+      "id": 7
+    },
+    {
+      "name": "Javonte",
+      "image": "/src/assets/blue-heeler.png",
+      "description": "lest belated directional Card Southeast",
+      "isFavorite": false,
+      "id": 8
+    },
+    {
+      "name": "Irma",
+      "image": "/src/assets/cowardly.png",
+      "description": "Northeast Solutions Bicycle West Bacon Kids Chicken",
+      "isFavorite": false,
       "id": 9
     },
     {
-      "name": "Domenico",
-      "image": "/src/assets/corgi.png",
-      "description": "inside azure partially exact West South Points reciprocal",
-      "isFavorite": false,
-      "id": 10
-    },
-    {
-      "name": "Martine",
+      "name": "Arlene",
       "image": "/src/assets/dalmation.png",
-      "description": "Chrysler Architect Kwanza Hydrogen second coincidence Principal",
-      "isFavorite": false,
-      "id": 11
-    },
-    {
-      "name": "Jordi",
-      "image": "/src/assets/chihuahua.avif",
-      "description": "Technetium Bike provided Tasty Forward tortoise Cerium",
+      "description": "auxiliary Buckinghamshire District parsing IB hm Oriental",
       "isFavorite": true,
       "id": 12
     },
     {
-      "name": "Eileen",
-      "image": "/src/assets/blue-heeler.png",
-      "description": "neural reach black impactful what compress Agent",
+      "name": "Rudy",
+      "image": "/src/assets/corgi.png",
+      "description": "Berkshire commodi fuchsia payment neural pish Implementation Porsche",
       "isFavorite": true,
       "id": 13
     },
     {
-      "name": "Mose",
-      "image": "/src/assets/blue-heeler.png",
-      "description": "framework outlying Sudan Cis Hop amongst candela generating",
-      "isFavorite": true,
+      "name": "Toni",
+      "image": "/src/assets/boxer.png",
+      "description": "North index payment Intuitive Manganese District labore",
+      "isFavorite": false,
+      "id": 14
+    },
+    {
+      "name": "Junius",
+      "image": "/src/assets/cowardly.png",
+      "description": "cultivate Polestar Account Account quos Elegant parsing",
+      "isFavorite": false,
       "id": 15
     },
     {
-      "name": "Margarett",
-      "image": "/src/assets/dalmation.png",
-      "description": "joule Argentina leverage meh Pickup Martin West iron",
-      "isFavorite": true,
-      "id": 16
-    },
-    {
-      "name": "Wilfredo",
-      "image": "/src/assets/blue-heeler.png",
-      "description": "logistical bluetooth Metal THX copy structure Northwest",
+      "name": "Sammie",
+      "image": "/src/assets/cowardly.png",
+      "description": "steep mobile hairy lavender Samarium Shirt Hybrid firmware",
       "isFavorite": false,
       "id": 17
     },
     {
-      "name": "Eveline",
-      "image": "/src/assets/cowardly.png",
-      "description": "Wichita Classical Touring withdrawal dogsled consequatur Chair temporibus",
-      "isFavorite": true,
+      "name": "Corbin",
+      "image": "/src/assets/dalmation.png",
+      "description": "fuga Bike Forward reboot Maine",
+      "isFavorite": false,
       "id": 18
     },
     {
-      "name": "Aniyah",
-      "image": "/src/assets/corgi.png",
-      "description": "absent Assistant New Manager digital",
-      "isFavorite": false,
+      "name": "Kenya",
+      "image": "/src/assets/boxer.png",
+      "description": "Southwest North Handmade haptic Director Trans compressing decent",
+      "isFavorite": true,
       "id": 19
-    },
-    {
-      "name": "",
-      "description": "",
-      "image": "/src/assets/blue-heeler.png",
-      "id": 20
-    },
-    {
-      "name": "safdasfa",
-      "description": "asdasdad",
-      "image": "/src/assets/boxer.jpeg",
-      "id": 21
-    },
-    {
-      "name": "dfhhgdfg",
-      "description": "dggggggggg",
-      "image": "/src/assets/blue-heeler.png",
-      "id": 22
     }
   ]
 }

@@ -25,19 +25,6 @@ export const CreateDogForm = () => {
         setDescriptionInput("");
         setSelectedImage(dogPictures.BlueHeeler);
       });
-    // toast.promise(createDogFetch({
-    //   name: nameInput,
-    //   image: selectedImage,
-    //   description: descriptionInput,
-    // }), {
-    //   loading: 'Creating Your Dog...',
-    //   success: 'Dog Created!',
-    //   error: 'Error when fetching',
-    // }).finally(() => {
-    //   setNameInput("")
-    //   setDescriptionInput("")
-    //   setSelectedImage(dogPictures.BlueHeeler)
-    // })
   };
   return (
     <form

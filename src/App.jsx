@@ -10,7 +10,7 @@ import { patchFavorites } from "./fetch-calls/fav-dogs";
 import { deleteDog } from "./fetch-calls/delete-dog";
 import { API_REQUEST } from "./const";
 
-function filterDogs(array) {
+function filterByFavorite(array) {
   return {
     array: array,
     favorites: array.filter((dog) => dog.isFavorite),
@@ -25,7 +25,7 @@ function App() {
   const [selected, setSelected] = useState("");
 
   const sortResults = (arr) => {
-    const filter = filterDogs(arr);
+    const filter = filterByFavorite(arr);
     setFavoriteDogs(filter.favorites);
     setUnFavoriteDogs(filter.unFavorites);
     if (selected === "showFavorites") {
@@ -45,12 +45,10 @@ function App() {
         toast.error(`${error}`, { id: "fetchDogs" });
       });
   };
+
   useEffect(() => {
     toast.loading("Fetching Dogs...", { id: "fetchDogs" });
-    fetch(API_REQUEST, {
-      method: "GET",
-      redirect: "follow",
-    })
+    fetchAllDogs()
       .then((response) => response.json())
       .then((result) => {
         sortResults(result);
@@ -85,7 +83,7 @@ function App() {
     fetchAllDogs()
       .then((response) => response.json())
       .then((result) => {
-        const filter = filterDogs(result);
+        const filter = filterByFavorite(result);
         if (selected === "showFavorites") {
           setSelected("");
           setDogCards(result);
@@ -103,7 +101,7 @@ function App() {
     fetchAllDogs()
       .then((response) => response.json())
       .then((result) => {
-        const filter = filterDogs(result);
+        const filter = filterByFavorite(result);
         if (selected === "showUnFavorites") {
           setSelected("");
           setDogCards(result);
